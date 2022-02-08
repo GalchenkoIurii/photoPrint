@@ -5,7 +5,78 @@
             absolute
             temporary
             app
-    ></v-navigation-drawer>
+    >
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h6">
+            PhotoPrint
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            Сервис примерки фотографий
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list
+              dense
+              nav
+      >
+        <v-list-item
+                v-for="(item, i) in navItems"
+                :key="i"
+                link
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+      <v-divider></v-divider>
+      <v-list
+              dense
+              nav
+      >
+        <v-list-item
+                link
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-login</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Вход</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+                link
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-account-plus</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Регистрация</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+                link
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-logout</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Выход</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
     <v-app-bar
       app
       color="teal darken-2"
@@ -36,7 +107,25 @@ export default {
   },
 
   data: () => ({
-    drawer: false
+    drawer: false,
+    navItems: [
+        {
+            title: 'Загрузить фото',
+            icon: 'mdi-image-plus'
+        },
+        {
+            title: 'Выбрать фото',
+            icon: 'mdi-image'
+        },
+        {
+            title: 'Категории фото',
+            icon: 'mdi-image-multiple'
+        },
+        {
+            title: 'О сервисе',
+            icon: 'mdi-help-box'
+        }
+    ]
   }),
 };
 </script>
