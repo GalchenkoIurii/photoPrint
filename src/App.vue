@@ -1,60 +1,42 @@
 <template>
   <v-app>
+    <v-navigation-drawer
+            v-model="drawer"
+            absolute
+            temporary
+            app
+    ></v-navigation-drawer>
     <v-app-bar
       app
-      color="primary"
+      color="teal darken-2"
       dark
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <v-container fluid class="mx-2 mx-sm-4 mx-md-6 mx-lg-8 mx-xl-10">
+        <v-row>
+          <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+          <div class="d-flex align-center ml-2 ml-sm-4 ml-md-6 ml-lg-8 ml-xl-10">
+            <span class="text-h6 font-weight-bold">PhotoPrint</span>
+          </div>
+          <v-spacer></v-spacer>
+        </v-row>
+      </v-container>
     </v-app-bar>
 
-    <v-main>
-      <HelloWorld/>
-    </v-main>
+    <v-main></v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
   },
 
   data: () => ({
-    //
+    drawer: false
   }),
 };
 </script>
