@@ -79,7 +79,7 @@
     </v-navigation-drawer>
     <v-app-bar
       app
-      color="teal darken-2"
+      color="teal darken-1"
       dark
     >
       <v-container fluid class="mx-2 mx-sm-4 mx-md-6 mx-lg-8 mx-xl-10">
