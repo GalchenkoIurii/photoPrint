@@ -86,46 +86,47 @@
         <v-row>
           <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
           <div class="d-flex align-center ml-2 ml-sm-4 ml-md-6 ml-lg-8 ml-xl-10">
-            <span class="text-h6 font-weight-bold">PhotoPrint</span>
+            <span class="text-h5 font-weight-bold">PhotoPrint</span>
           </div>
           <v-spacer></v-spacer>
         </v-row>
       </v-container>
     </v-app-bar>
 
-    <v-main></v-main>
+    <v-main>
+      <home/>
+    </v-main>
   </v-app>
 </template>
 
 <script>
+  import Home from "@/components/Home";
 
-
-export default {
-  name: 'App',
-
-  components: {
-  },
-
-  data: () => ({
-    drawer: false,
-    navItems: [
-        {
-            title: 'Загрузить фото',
-            icon: 'mdi-image-plus'
-        },
-        {
-            title: 'Выбрать фото',
-            icon: 'mdi-image'
-        },
-        {
-            title: 'Категории фото',
-            icon: 'mdi-image-multiple'
-        },
-        {
-            title: 'О сервисе',
-            icon: 'mdi-help-box'
-        }
-    ]
-  }),
-};
+  export default {
+    name: 'App',
+    components: {
+        Home
+    },
+    data: () => ({
+      drawer: false,
+      navItems: [
+          {
+              title: 'Загрузить фото',
+              icon: 'mdi-image-plus'
+          },
+          {
+              title: 'Выбрать фото',
+              icon: 'mdi-image'
+          },
+          {
+              title: 'Категории фото',
+              icon: 'mdi-image-multiple'
+          },
+          {
+              title: 'О сервисе',
+              icon: 'mdi-help-box'
+          }
+      ]
+    }),
+  };
 </script>
